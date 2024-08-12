@@ -3,15 +3,15 @@
 '''
 This is a 
 multiline comment
-or docstring (used to define a functions purpose)
-can be single or double quotes
+or docstring (used to define a function's purpose).
+These can use either single or double quotes.
 '''
 
 """
 VARIABLE RULES:
-  - Variable names are case sensitive (name and NAME are different variables)
-  - Must start with a letter or an underscore
-  - Can have numbers but can not start with one
+  - Variable names are case sensitive. (name and NAME are different variables.)
+  - They must start with a letter or an underscore.
+  - They can have numbers but cannot start with one.
 """
 
 # x = 1           # int (integer)
@@ -19,7 +19,9 @@ VARIABLE RULES:
 # name = 'John'   # str (string)
 # is_cool = True  # bool (Boolean)
 
-# Multiple assignment
+# Is it just me or do integers seem a bit useless?
+
+# Multiple assignment - This is more compact than listing them separately.
 x, y, name, is_cool = (1, 2.5, 'John', True)
 
 # Basic math
@@ -27,7 +29,7 @@ a = x + y
 
 # Casting
 x = str(x)
-y = int(y)
+y = int(y) 
 z = float(y)
 
 print(type(z), z)
