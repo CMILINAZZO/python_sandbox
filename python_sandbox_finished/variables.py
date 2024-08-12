@@ -14,10 +14,10 @@ VARIABLE RULES:
   - Can have numbers but can not start with one
 """
 
-# x = 1           # int
+# x = 1           # int (integer)
 # y = 2.5         # float
-# name = 'John'   # str
-# is_cool = True  # bool
+# name = 'John'   # str (string)
+# is_cool = True  # bool (Boolean)
 
 # Multiple assignment
 x, y, name, is_cool = (1, 2.5, 'John', True)
