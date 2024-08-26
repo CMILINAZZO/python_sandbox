@@ -52,3 +52,12 @@ def FINDarea(r):
   return print('Area of circle is:' ,area)
 FINDarea(4)
 
+'''
+When the Python interpreter encounters a `return` statement, it immediately stops executing the rest of the code in the function, regardless of whether there are more 
+lines of code after it.
+
+The `return` statement can optionally be followed by an expression. The value of this expression is then sent back to the part of the code that called the function. If no 
+expression is provided, the function returns `None`.
+
+The `return` statement can only be used inside a function. It is not valid in other parts of the Python code.
+'''
