@@ -21,7 +21,34 @@ print (x <= y)
 # Exercise 3: Use VS Code to develop a Hello World program in Python.
 
 if name == 'Carrie':
-    print ("Hello World")
+    print ("Hello World!")
+
+def goodnight_moon():
+    print ("Goodnight, Moon.")
+
+goodnight_moon()
 
 # Homework: Create a python function that Calculates the area of a circle given its radius.
+
+# For this function, findArea(r) specifies that the function being defined takes one variable.
+def findArea(r):
+    PI = 3.142
+    return PI * (r*r);
+
+# The radius we're working with here is 5.
+print(findArea(5))
+
+# This is more complicated
+# %.6f is a format specifier that tells Python to format the answer as a float with 6 decimal places.
+# % is the modulo operator to combine the format specifier with the result of the function.
+
+print ("Area is %.6f" % findArea(5))
+
+# This one uses an imported module (math).
+
+import math
+def FINDarea(r):
+  area = math.pi* pow(r,2)
+  return print('Area of circle is:' ,area)
+FINDarea(4)
 
