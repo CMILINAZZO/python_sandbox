@@ -12,56 +12,26 @@ def vitals(index):
    resp_rate = vital_signs[5]
    print(vital_signs[4])
    print("Respiratory Rate " + resp_rate)
-
 vitals(0)
 
 
 # Hello name function
 
-'''
 def hello_name(name):
   print("Hello " + name + "!")
-
 hello_name("Carrie")
+
+
+# Tuples are basically the same as lists, EXCEPT:
+# They are typed with parentheses instead of brackets.
+# They cannot have their values modified, appended or removed.
+
+# And so, the following won't work:
+
 '''
-
-
-# Input
-
-print("Type your name.")
-my_name = input()
-
-print("Type the password.")
-password = input()
-
-if my_name == "Carrie" and password == "password":
-  print("Hello Carrie")
-  print("Access granted.")
-else:
-  print('Access denied.')
-
-def errorMsg():
-  if my_name != "Carrie" and password != "password":
-    print("The name and password are incorrect.")
-  if my_name == "Carrie" and password != "password":
-    print("The password is incorrect.")
-  if my_name != "Carrie" and password == "password":
-    print("The name is incorrect.")
-
-errorMsg()
-
-
-  # Tuples are basically the same as lists, EXCEPT:
-  # They are typed with parentheses instead of brackets.
-  # They cannot have their values modified, appended or removed.
-
-
-# The following won't work:
-
-""""
 eggs = ('hello', 42, 0.5)
 eggs[1] = 99
-"""
+'''
 
 
 # Function based on a tuple
@@ -70,13 +40,11 @@ def cars():
   tuple_cars = ("chevrolet", "ford", "tesla", "toyota")
   print("Enter your car's brand in lowercase.")
   my_car = input()
-  if my_car in tuple_cars:
+  if my_car.upper in tuple_cars:
     print("Your car is here.")
   else:
     print("Your car is not here.")
-
-if my_name == "Carrie" and password == "password":
-  cars()
+cars()
 
 
 # Function based on a dictionary
@@ -84,10 +52,8 @@ if my_name == "Carrie" and password == "password":
 myDog = {'size': 'medium', 
          'color': 'white, brown and black',
          'disposition': 'anxious, sweetheart, occasionally spicy'}
-
 def doggySize():
-  print(my_name + "'s dog is " + myDog['size'] + " sized.")
-
+  print("Carrie's dog is " + myDog['size'] + " sized.")
 doggySize()
 
 
@@ -99,5 +65,5 @@ except:
   print("A function was called that does not exist.")
 
 
-# More complicated stuff
-
+# Nested lists
+# Do some math
