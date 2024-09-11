@@ -38,9 +38,9 @@ eggs[1] = 99
 
 def cars():
   tuple_cars = ("chevrolet", "ford", "tesla", "toyota")
-  print("Enter your car's brand in lowercase.")
+  print("Enter your car's brand (in lowercase.)")
   my_car = input()
-  if my_car.upper in tuple_cars:
+  if my_car in tuple_cars:
     print("Your car is here.")
   else:
     print("Your car is not here.")
@@ -66,4 +66,36 @@ except:
 
 
 # Nested lists
-# Do some math
+
+def nested_list():
+   nested_list = [["BP", "HR", "RR"], [150, 90, 18]]
+   print(nested_list[0][0])
+   print(nested_list[1][0])
+   print(nested_list[0][1])
+   print(nested_list[1][1])
+   print(nested_list[0][2])
+   print(nested_list[1][2])
+nested_list()
+
+
+# Birthdays
+
+def birthdays():
+   birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
+   while True: 
+      print('Enter a name: (blank to quit)')
+      name = input()
+      if name == '':
+         break
+      if name in birthdays:
+         print(birthdays[name] + ' is the birthday of ' + name)
+      else:
+         print('I do not have birthday information for ' + name)
+         print('What is their birthday?')
+         bday = input()
+         birthdays[name] = bday
+         print('Birthday database updated.')
+birthdays()
+# This does not actually update the dictionary. Is there a way to get it to actually update the dictionary?
+# Would it need to write a new file?
+

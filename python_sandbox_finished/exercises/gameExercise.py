@@ -56,6 +56,7 @@ if user_input.upper() == "I":
   total_items = sum_values(inventory)
   print("Total number of items:", total_items)
 
+# After answering my last question in exercises2.py:
 # Next, add a way to add or remove specific items from inventory. (Add an inventory limit - like 35.)
 # Add health and hunger points, and a way to view health points & hunger points.
 # Add a way to gain/lose those.
