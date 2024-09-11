@@ -44,3 +44,6 @@ people = [
 ]
 
 print(people[1]['name'])
+
+
+# JSON is like a dictionary, with name & value pairs.

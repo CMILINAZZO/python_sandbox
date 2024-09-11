@@ -22,3 +22,15 @@ myFile.close()
 myFile = open('myfile.txt', 'r+')
 text = myFile.read(100)
 print(text)
+
+'''
+You don't want to use open, write and close in real development, it is prone to vulnerabilities.
+Use 'with' instead. It ensures that the file is automatically closed even if an exception occurs.
+
+Play around with this.
+
+Converting CSV to JSON is a common program. Tom shared some resources to try this out.
+
+w mode is write mode, r mode is read mode
+'''
+

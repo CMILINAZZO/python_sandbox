@@ -25,3 +25,8 @@ if validate_email(email):
   print('Email is valid')
 else:
   print('Email is bad')
+
+
+'''
+Modules are the same as libraries. There's CSV and JSON modules.
+'''
