@@ -1,5 +1,5 @@
 # Read Lines
-with open('python-text-file.txt', 'r') as f:
+with open('example_text.txt', 'r') as f:
     text = f.readlines()
     print(text) # returns a list
     print(f.name)
