@@ -3,7 +3,7 @@
 import csv
 import json
 
-'''
+
 # Funtion that turns a csv file into a json file:
 
 def csv_to_json(csv_filepath, json_filepath):
@@ -25,7 +25,6 @@ def csv_to_json(csv_filepath, json_filepath):
 
 # Example usage:
 csv_to_json('customers.csv', 'customers.json')
-'''
 
 # See readlines.py
 
