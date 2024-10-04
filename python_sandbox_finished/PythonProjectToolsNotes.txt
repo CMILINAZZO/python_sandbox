@@ -1,0 +1,97 @@
+Jupyter Notebook vs. VS Code
+
+Both Jupyter Notebook and VS Code are popular tools for Python development, but they cater to different needs and workflows:
+
+
+ Jupyter Notebook
+
+Strengths:
+
+Interactive exploration: Excellent for experimenting with code, visualizing data, and iteratively developing analyses.   
+Data-centric: Well-suited for data science tasks, machine learning, and any work involving exploring and presenting data.   
+Narrative format: Allows you to combine code, text (with Markdown), and visualizations in a single document, creating a compelling narrative around your work.   
+Easy sharing: Notebooks can be easily shared and reproduced, making them great for collaboration and communication.   
+
+Weaknesses:
+
+Not ideal for large projects: Can become less manageable for complex codebases or production-level software development.   
+Limited debugging features: Debugging can be more challenging compared to traditional IDEs like VS Code.
+Reproducibility issues: The order of cell execution can affect results, sometimes leading to reproducibility challenges.
+
+
+ VS Code
+
+Strengths:
+
+Powerful IDE: Offers a full-featured development environment with advanced debugging, code completion, and refactoring tools.   
+Versatile: Supports a wide range of languages and frameworks, making it suitable for various types of projects.   
+Extensible: Highly extensible with a vast library of extensions to enhance functionality.   
+Good for large projects: Better suited for managing complex codebases and building production-ready applications.
+
+Weaknesses:
+
+Less interactive: While it supports Jupyter Notebooks, the interactive experience might not be as seamless as dedicated Jupyter environments.
+Steeper learning curve: Can have a slightly steeper learning curve compared to Jupyter Notebook, especially for beginners.
+
+
+Anaconda Environment
+
+Anaconda is a popular Python distribution specifically designed for data science and scientific computing. It simplifies package management and deployment and provides a number of benefits:   
+
+Package management: Conda, the package manager included with Anaconda, makes it easy to install, update, and manage Python packages and their dependencies.   
+Environment management: Anaconda allows you to create isolated environments to keep your projects and their dependencies separate, preventing conflicts.   
+Pre-installed libraries: Anaconda comes with many commonly used data science libraries pre-installed, such as NumPy, Pandas, Matplotlib, and Scikit-learn.   
+Cross-platform: Anaconda is available for Windows, macOS, and Linux.   
+
+Why use Anaconda?
+
+Simplified setup: It simplifies the initial setup and configuration for data science projects.
+Dependency management: It helps avoid conflicts between different project requirements.
+Access to specialized tools: It provides access to tools like Jupyter Notebook, Spyder, and RStudio.
+
+
+Anaconda - Notes on my Experience with it, after following Tom's instructions:
+
+I ran into a problem where I would activate my ml_env_1 from the anaconda terminal, and then type jupyter notebook, and it would not launch properly.
+
+First, I got an error in the terminal that the command was not recognized or valid (can't remmber exact wording).
+Steps to resolve the issue: (Don't forget to activate first: Bash: conda activate ml_env_1)
+    1. I removed all of the packages that I previously had installed, per Tom's instrictions.
+        Bash: conda remove --ml_env_1 --all
+    2. I installed the packages again. I did not install pip or pandoc. I only used the conda command to install packages.
+    3. I installed these packages (not sure yet if I need all these, or if I will need more):
+        conda install scikit-learn matplotlib scipy pandas
+        conda install jupyter
+        conda install -c conda-forge pylatexenc
+        conda install chardet
+    4. I downloaded Pandoc from the website.
+Side note: To see all the packages you have installed, the Bash is conda list.
+
+This fixed my forst problem of getting jupyter notebooks to launch. But then I got an error where the access was denied.
+The file in the browser popup didn't actually exist.
+Steps to resolve the issue: (Don't forget to activate first: Bash: conda activate ml_env_1)
+    1. I generated a configuration file: Bash: jupyter notebook --generate-config
+        This creates a file named jupyter_notebook_config.py in your Jupyter directory.
+        The prompt will tell you the location of the file. If it already exists, it will give you the option of overwriting.
+    2. Find your jupyter directory in file explorer and paste in the path from the anaconda prompt.
+        Usually looks something like C:\Users\YourName\.jupyter
+        Open jupyter_notebook_config.py (which should exist in that folder) I opened via VS Code
+        Modify the file:
+            Find the line # c.ServerApp.notebook_dir = ''
+            Uncomment it and enter the full path to the directory where you want jupyter to start
+            In my case, the path is C:/Users/cmilinazzo/Documents/Code/Jupyter Notebooks
+            Save the file
+
+I continued getting the access denied issue, with the incorrect file path in the browser.
+Steps to resolve the issue: (Don't forget to activate first: Bash: conda activate ml_env_1)
+    1. I cleared Jupyter's runtime files (from all my previous attempts).
+        Navigate to the runtime directory (in file explorer).
+        In my case, this was C:\Users\cmilinazzo\AppData\Roaming\jupyter\runtime
+        Delete all jpserver .json files and .html files - DO NOT delete the kernel files and jupyter_cookie_secret file
+    2. I closed everything out and tried again, and it worked!
+
+Before closing everything out, I hit Ctrl+C twice in terminal to shut it down.
+Then I clicked File > shut down in Jupyter notebook to be extra sure.
+Then I closed out of Anaconda Navigator.
+This may not all be necessary, but I want to be extra sure not to cause more issues.
+This also works to deactivate and environment: Bash: conda deactivate
